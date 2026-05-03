@@ -1,0 +1,23 @@
+{
+  "manifest_version": 3,
+  "name": "Gmail Appender",
+  "version": "1.0",
+  "description": "Вставляет письма из указанной папки в inbox и подставляет данные из темы",
+  "permissions": ["storage"],
+  "icons": {
+    "32": "icon.png"
+  },
+  "action": {
+    "default_popup": "popup.html",
+    "default_icon": {
+      "32": "icon.png"
+    }
+  },
+  "content_scripts": [
+    {
+      "matches": ["https://mail.google.com/*"],
+      "js": ["content.js"],
+      "run_at": "document_end"
+    }
+  ]
+}
